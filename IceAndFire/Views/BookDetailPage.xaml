@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IceAndFire.Views.BookDetailPage"
+             Title="{Binding Title}"
+             Visual="Material">
+    <ScrollView>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="Name:" FontSize="Medium" />
+            <Label Text="{Binding Name}" FontSize="Small"/>
+            <Label Text="ISBN:" FontSize="Medium" />
+            <Label Text="{Binding Isbn}" FontSize="Small"/>
+            <Label Text="Number of pages:" FontSize="Medium" />
+            <Label Text="{Binding NumberOfPages}" FontSize="Small"/>
+            <Label Text="Authors:" FontSize="Medium" />
+            <Label Text="{Binding Authors}" FontSize="Small"/>
+            <Label Text="Publisher:" FontSize="Medium" />
+            <Label Text="{Binding Publisher}" FontSize="Small"/>
+            <Label Text="Country:" FontSize="Medium" />
+            <Label Text="{Binding Country}" FontSize="Small"/>
+            <Label Text="Media type:" FontSize="Medium" />
+            <Label Text="{Binding MediaType}" FontSize="Small"/>
+            <Label Text="Release date:" FontSize="Medium" />
+            <Label Text="{Binding Released}" FontSize="Small"/>
+            <Label Text="Characters:" FontSize="Medium" />
+            <Label Text="{Binding Characters}" FontSize="Small"/>
+            <Label Text="Pov characters:" FontSize="Medium" />
+            <Label Text="{Binding PovCharacters}" FontSize="Small"/>
+        </StackLayout>
+    </ScrollView>
+    
+
+</ContentPage>

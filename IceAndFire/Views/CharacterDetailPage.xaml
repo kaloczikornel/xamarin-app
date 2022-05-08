@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:IceAndFire.ViewModels"
+             x:DataType="viewmodels:CharacterDetailViewModel"
+             x:Class="IceAndFire.Views.CharacterDetailPage"
+             Title="{Binding Title}"
+             Visual="Material">
+
+    <ScrollView>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="Name:" FontSize="Medium" />
+            <Label Text="{Binding Name}" FontSize="Small"/>
+            <Label Text="Gender:" FontSize="Medium" />
+            <Label Text="{Binding Gender}" FontSize="Small"/>
+            <Label Text="Culture:" FontSize="Medium" />
+            <Label Text="{Binding Culture}" FontSize="Small"/>
+            <Label Text="Born:" FontSize="Medium" />
+            <Label Text="{Binding Born}" FontSize="Small"/>
+            <Label Text="Died:" FontSize="Medium" />
+            <Label Text="{Binding Died}" FontSize="Small"/>
+            <Label Text="Titles:" FontSize="Medium" />
+            <Label Text="{Binding Titles}" FontSize="Small"/>
+            <Label Text="Aliases:" FontSize="Medium" />
+            <Label Text="{Binding Aliases}" FontSize="Small"/>
+            <Label Text="Father:" FontSize="Medium" />
+            <Label Text="{Binding Father}" FontSize="Small"/>
+            <Label Text="Mother:" FontSize="Medium" />
+            <Label Text="{Binding Mother}" FontSize="Small"/>
+            <Label Text="Spouse:" FontSize="Medium" />
+            <Label Text="{Binding Spouse}" FontSize="Small"/>
+            <Label Text="Allegiances:" FontSize="Medium" />
+            <Label Text="{Binding Allegiances}" FontSize="Small"/>
+            <Label Text="Books:" FontSize="Medium" />
+            <Label Text="{Binding Books}" FontSize="Small"/>
+            <Label Text="Pov books:" FontSize="Medium" />
+            <Label Text="{Binding PovBooks}" FontSize="Small"/>
+            <Label Text="Tv series:" FontSize="Medium" />
+            <Label Text="{Binding TvSeries}" FontSize="Small"/>
+            <Label Text="Played by:" FontSize="Medium" />
+            <Label Text="{Binding PlayedBy}" FontSize="Small"/>
+        </StackLayout>
+    </ScrollView>
+    
+
+</ContentPage>

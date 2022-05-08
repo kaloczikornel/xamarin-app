@@ -1,0 +1,1 @@
+E:\BME\6_semester\Kliens\homework\IceAndFire\IceAndFire.UWP\IceAndFire.UWP.csproj;x86

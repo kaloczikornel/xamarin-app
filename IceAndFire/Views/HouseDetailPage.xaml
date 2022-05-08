@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IceAndFire.Views.HouseDetailPage"
+             Title="{Binding Title}"
+             Visual="Material">
+
+    <ScrollView>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="Name:" FontSize="Medium" />
+            <Label Text="{Binding Name}" FontSize="Small"/>
+            <Label Text="Region:" FontSize="Medium" />
+            <Label Text="{Binding Region}" FontSize="Small"/>
+            <Label Text="Coat of arms:" FontSize="Medium" />
+            <Label Text="{Binding CoatOfArms}" FontSize="Small"/>
+            <Label Text="Words:" FontSize="Medium" />
+            <Label Text="{Binding Words}" FontSize="Small"/>
+            <Label Text="Titles:" FontSize="Medium" />
+            <Label Text="{Binding Titles}" FontSize="Small"/>
+            <Label Text="Seats:" FontSize="Medium" />
+            <Label Text="{Binding Seats}" FontSize="Small"/>
+            <Label Text="Current lord:" FontSize="Medium" />
+            <Label Text="{Binding CurrentLord}" FontSize="Small"/>
+            <Label Text="Heir:" FontSize="Medium" />
+            <Label Text="{Binding Heir}" FontSize="Small"/>
+            <Label Text="Overlord:" FontSize="Medium" />
+            <Label Text="{Binding Overlord}" FontSize="Small"/>
+            <Label Text="Founded:" FontSize="Medium" />
+            <Label Text="{Binding Founded}" FontSize="Small"/>
+            <Label Text="Founder:" FontSize="Medium" />
+            <Label Text="{Binding Founder}" FontSize="Small"/>
+            <Label Text="Died out:" FontSize="Medium" />
+            <Label Text="{Binding DiedOut}" FontSize="Small"/>
+            <Label Text="Ancestral weapons:" FontSize="Medium" />
+            <Label Text="{Binding AncestralWeapons}" FontSize="Small"/>
+            <Label Text="Cadet branches:" FontSize="Medium" />
+            <Label Text="{Binding CadetBranches}" FontSize="Small"/>
+            <Label Text="Sworn members:" FontSize="Medium" />
+            <Label Text="{Binding SwornMembers}" FontSize="Small"/>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
