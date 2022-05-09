@@ -1,5 +1,4 @@
 ﻿using IceAndFire.Models;
-using IceAndFire.Services;
 using IceAndFire.Views;
 using System;
 using System.Collections.ObjectModel;

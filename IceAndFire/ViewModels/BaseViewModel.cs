@@ -1,12 +1,9 @@
-﻿using IceAndFire.Models;
-using IceAndFire.Services;
+﻿using IceAndFire.Services;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using Xamarin.Forms;
 
 namespace IceAndFire.ViewModels
 {
