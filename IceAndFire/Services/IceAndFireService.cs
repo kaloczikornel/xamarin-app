@@ -56,6 +56,26 @@ namespace IceAndFire.Services
             }
             return await GetAsync<List<Book>>(new Uri(serverUrl, $"api/books/?name={query}"));
         }
+        public async Task<List<House>> GetHouseByNameQueryString(string str)
+        {
+            string query = "";
+            if (str != null)
+            {
+                string[] subs = str.Split(' ');
+                query = string.Join("%20", subs);
+            }
+            return await GetAsync<List<House>>(new Uri(serverUrl, $"api/houses/?name={query}"));
+        }
+        public async Task<List<Character>> GetCharacterByNameQueryString(string str)
+        {
+            string query = "";
+            if (str != null)
+            {
+                string[] subs = str.Split(' ');
+                query = string.Join("%20", subs);
+            }
+            return await GetAsync<List<Character>>(new Uri(serverUrl, $"api/characters/?name={query}"));
+        }
         public string StringArrayToString(string[] str)
         {
             return str.Length == 0 ? "No data" : string.Join("\n", str);

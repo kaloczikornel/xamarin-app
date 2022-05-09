@@ -12,46 +12,39 @@ namespace IceAndFire.ViewModels
     public class CharactersViewModel : BaseViewModel
     {
         private Character _selectedCharacter;
-
-        public ObservableCollection<Character> Characters { get; }
+        public ObservableCollection<Character> SearchResults { get; }
         public Command LoadCharactersCommand { get; }
         public Command<Character> CharacterTapped { get; }
+        public Command<string> PerformSearch { get; }
 
         public CharactersViewModel()
         {
             Title = "Characters";
-            Characters = new ObservableCollection<Character>();
-            LoadCharactersCommand = new Command(async () => await ExecuteLoadCharactersCommand());
-
+            SearchResults = new ObservableCollection<Character>();
+            PerformSearch = new Command<string>(async (string query) => await ExecuteSearch(query));
             CharacterTapped = new Command<Character>(OnCharacterSelected);
         }
-
-        async Task ExecuteLoadCharactersCommand()
+        async Task ExecuteSearch(string param)
         {
-            IsBusy = true;
+            Query = param;
 
             try
             {
-                Characters.Clear();
-                var characters = await Service.GetCharactersAsync();
+                SearchResults.Clear();
+                var characters = await Service.GetCharacterByNameQueryString(Query);
                 foreach (var character in characters)
                 {
-                    Characters.Add(character);
+                    SearchResults.Add(character);
                 }
+
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex);
             }
-            finally
-            {
-                IsBusy = false;
-            }
         }
-
         public void OnAppearing()
         {
-            IsBusy = true;
             SelectedCharacter = null;
         }
 

@@ -12,46 +12,39 @@ namespace IceAndFire.ViewModels
     public class HousesViewModel : BaseViewModel
     {
         private House _selectedHouse;
-
-        public ObservableCollection<House> Houses { get; }
+        public ObservableCollection<House> SearchResults { get; }
         public Command LoadHousesCommand { get; }
         public Command AddHouseCommand { get; }
         public Command<House> HouseTapped { get; }
+        public Command<string> PerformSearch { get; }
         public HousesViewModel()
         {
             Title = "Houses";
-            Houses = new ObservableCollection<House>();
-            LoadHousesCommand = new Command(async () => await ExecuteLoadHousesCommand());
-
+            SearchResults = new ObservableCollection<House>();
+            PerformSearch = new Command<string>(async (string query) => await ExecuteSearch(query));
             HouseTapped = new Command<House>(OnHouseSelected);
         }
-
-        async Task ExecuteLoadHousesCommand()
+        async Task ExecuteSearch(string param)
         {
-            IsBusy = true;
+            Query = param;
 
             try
             {
-                Houses.Clear();
-                var houses = await Service.GetHousesAsync();
+                SearchResults.Clear();
+                var houses = await Service.GetHouseByNameQueryString(Query);
                 foreach (var house in houses)
                 {
-                    Houses.Add(house);
+                    SearchResults.Add(house);
                 }
+
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex);
             }
-            finally
-            {
-                IsBusy = false;
-            }
         }
-
         public void OnAppearing()
         {
-            IsBusy = true;
             SelectedHouse = null;
         }
 

@@ -2,7 +2,9 @@
 using IceAndFire.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
@@ -12,11 +14,11 @@ namespace IceAndFire.ViewModels
     {
         public IceAndFireService Service = new IceAndFireService();
 
-        bool isBusy = false;
-        public bool IsBusy
+        string query = string.Empty;
+        public string Query
         {
-            get { return isBusy; }
-            set { SetProperty(ref isBusy, value); }
+            get { return query; }
+            set { SetProperty(ref query, value); }
         }
 
         string title = string.Empty;
@@ -44,6 +46,7 @@ namespace IceAndFire.ViewModels
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             var changed = PropertyChanged;
+            Debug.WriteLine(propertyName);
             if (changed == null)
                 return;
 
